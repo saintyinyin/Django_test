@@ -4,4 +4,6 @@ this is only as a sample for my first time to use GitHub. It's wonderful tools t
 
 just end!
 
+Add comment here at Jul2520
+
 --clear
