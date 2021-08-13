@@ -18,16 +18,17 @@
     --check-hash-based-pycs：设置是否对 `pyc` 文件进行 hash 校验
 }
 
-####################################
-# Django_test
-Study django project and put all of them on github project Django_test
-
-Outlines:
-1. vscode env -- c:\users\scnzhy\.virtualenvs\django
+# python virtualenv
+   . vscode env -- c:\users\scnzhy\.virtualenvs\django
    . cd <env>/Scripts
    . activate (enter django env)
-2. django
-   . django-admin startproject bookmanager # Create project
+
+# Django_test
+   . git project which using for Django project
+
+# Django
+   # Framework
+   1. django-admin startproject bookmanager # Create project
        {
         1) manage.py文件
           一级子目录中的 manage.py 文件是管理 Django 项目的重要命令行工具，它主要用于启动项目、创建应用和完成数据库的迁移等。
@@ -40,28 +41,47 @@ Outlines:
         5) wsgi.py文件
           wsgi.py 是 WSGI（Web Server Gateway Interface）服务器程序的入口文件，主要用于启动应用程序。它遵守 WSGI 协议并负责网络通讯部分的实现，只有在项目部署的时候才会用到它。
         } 
-   . python manage.py startapp book  # Create sub-app of django
+   2. python manage.py startapp book  # Create sub-app of django
        {
-        admin.py 用于将 Model 定义的数据表注册到管理后台，是 Django Admin 应用的配置文件；
-        apps.py 用于应用程序本身的属性配置文件；
-        models.py 用于定义应用中所需要的数据表；
-        tests.py 文件用于编写当前应用程序的单元测试；
-        views.py 用来定义视图处理函数的文件；
+        1) admin.py 用于将 Model 定义的数据表注册到管理后台，是 Django Admin 应用的配置文件；
+        2) apps.py 用于应用程序本身的属性配置文件；
+        3) models.py 用于定义应用中所需要的数据表；
+        4) tests.py 文件用于编写当前应用程序的单元测试；
+        5) views.py 用来定义视图处理函数的文件；
         一级目录下的 __init__.py 文件标识 index 应用是一个 Python 包；
         migrations 目录用于存储数据库迁移时生成的文件，该目录下的 __init__.py 文件标识 migrations 是一个 Python 包。
         }
-   . tree /f <dir>
-   . http://127.0.0.1:8000/ # Access django website
+        - Application setting in INSTALLED_APPS  
+        <code>INSTALLED_APPS = [
+        'book',
+        ]</code>
+
+   3. tree /f <dir>
+
+   4. python manage.py runserver
+
+   5. http://127.0.0.1:8000/ # Access django website
    
-   # ======ORM model===== #
-   # Object Relational Mapping(关系对象映射)
-      # 类名对应------》数据库中的表名
-      # 类属性对应---------》数据库里的字段
-      # 类实例对应---------》数据库表里的一行数据
-      # obj.id  obj.name.....类实例对象的属性
-   # Django的orm操作本质上会根据对接的数据库引擎，翻译成对应的sql语句；所有使用Django开发的项目无需关心程序底层使用的是MySQL、Oracle、sqlite....，如果数据库迁移，只需要更换Django的数据库引擎即可；
-   . python manage.py makemigrations   # make migration file, convert class to table structure file
-   . python manage.py migrate  # exec migrate, then db create tables
+   # ORM model
+     {Object Relational Mapping(关系对象映射)
+       类名对应------》数据库中的表名
+       类属性对应---------》数据库里的字段
+       类实例对应---------》数据库表里的一行数据
+       obj.id  obj.name.....类实例对象的属性
+    Django的orm操作本质上会根据对接的数据库引擎，翻译成对应的sql语句；所有使用Django开发的项目无需关心程序底层使用的是MySQL、Oracle、sqlite....，如果数据库迁移，只需要更换Django的数据库引擎即可；
+     }
+   1. Add models in book/models.py  # Here's BookInfo, PeopleInfo
+
+   2. Register models in book/admin.py
+
+   3. python manage.py makemigrations   # make migration file, convert class to table structure file
+
+   4. python manage.py migrate  # exec migrate, then db create tables
+
+   5. python manage.py createsuperuser  # Create supper account for Django in db.sqlite3
+      or python manage.py changepassword # Change password
+
+   6. http://127.0.0.1:8000/admin # Access django website with ORM
 
 # history
    . Modified by zhigang.yin at 11Aug2021
