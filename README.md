@@ -84,4 +84,4 @@
    6. http://127.0.0.1:8000/admin # Access django website with ORM
 
 # history
-   . Modified by zhigang.yin at 11Aug2021
+   . Modified by zhigang.yin at 13Aug2021
