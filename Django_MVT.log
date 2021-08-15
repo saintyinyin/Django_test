@@ -1,0 +1,29 @@
+Django
+
+环境安装 ->  虚拟环境 创建、查看、切换、退出
+
+创建Django工程 -> 
+        1. 创建Django工程：django_admin startproject <name>
+        2. 创建Django应用：python manage.py startapp <name>
+
+模型(MVT) ->
+        1. 定义模型：models.Model
+        2. 生成迁移：python manage.py makemigrations
+                    python manage.py migrate
+        3. 操作数据
+
+视图 ->
+        1. url配置和匹配查询：定义路由 -> 在应用下加urls.py文件，并加入urlpatterns 定义
+                                      在工程目录下的urls中加入引用 path('', include('book.urls')),
+        2. 视图：请求
+                响应
+        3. 
+
+模版 ->
+        1. 模版路径设置
+        2. 加载模版
+
+配置文件 ->
+        1. settings -> BASE_DIR
+        2. static
+        3. app 配置
