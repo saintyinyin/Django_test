@@ -1,4 +1,4 @@
-from book.models import BookInfo, PeopleInfo
+from book.models import BookInfo,PeopleInfo
 from django.contrib import admin
 
 # Register your models here.
